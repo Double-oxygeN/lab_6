@@ -20,7 +20,7 @@ module m_vram
 endmodule
 
 module m_vga
-  #(parameter HPIXELS = 200, VPIXELS = 150,
+  #(parameter HPIXELS = 160, VPIXELS = 120, 
                ADDR_BITS = 16, PALETTE_BITS = 6, PALETTE_MEM_FILE = "palette.mem")
   (input wire w_clk,
    output wire [3:0] w_vga_r, w_vga_g, w_vga_b,
@@ -71,7 +71,7 @@ module m_vga
   wire [(PALETTE_BITS - 1):0] w_col;
   wire [11:0] w_color = cm_palette_rom[w_col];
   
-  m_vram #(HPIXELS, VPIXELS, ADDR_BITS, PALETTE_BITS) m_vram0 (w_clk, w_wenable, w_wx, w_wy, r_hcount / 4, r_vcount / 4, w_wdata, w_col);
+  m_vram #(HPIXELS, VPIXELS, ADDR_BITS, PALETTE_BITS) m_vram0 (w_clk, w_wenable, w_wx, w_wy, r_hcount / 5, r_vcount / 5, w_wdata, w_col);
   
   assign w_vga_r = w_color[11:8];
   assign w_vga_g = w_color[7:4];

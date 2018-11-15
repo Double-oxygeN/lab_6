@@ -91,10 +91,6 @@ set_property -dict { PACKAGE_PIN V14 IOSTANDARD LVCMOS33 } [get_ports { w_led[13
 set_property -dict { PACKAGE_PIN V12 IOSTANDARD LVCMOS33 } [get_ports { w_led[14] }];
 set_property -dict { PACKAGE_PIN V11 IOSTANDARD LVCMOS33 } [get_ports { w_led[15] }];
 
-# Temperature Sensor
-# IIC Serial Connection
+set_property -dict { PACKAGE_PIN R11 IOSTANDARD LVCMOS33 } [get_ports { w_led2[1] }];
+set_property -dict { PACKAGE_PIN M16 IOSTANDARD LVCMOS33 } [get_ports { w_led2[0] }];
 
-# set_property -dict { PACKAGE_PIN C14 IOSTANDARD LVCMOS33 } [get_ports { w_temp_scl }];
-# set_property -dict { PACKAGE_PIN C15 IOSTANDARD LVCMOS33 } [get_ports { w_temp_sda }];
-
-# set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets w_temp_scl_IBUF];
